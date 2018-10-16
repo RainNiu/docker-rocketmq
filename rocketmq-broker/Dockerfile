@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-FROM apache/rocketmq-base:4.3.0
+FROM ccr.ccs.tencentyun.com/sinosoftofc/rocketmq-base:4.3.0
 
 EXPOSE 10909 10911
 
