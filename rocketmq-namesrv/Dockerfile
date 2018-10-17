@@ -21,7 +21,8 @@ EXPOSE 9876
 
 RUN mv ${ROCKETMQ_HOME}/bin/runserver-customize.sh ${ROCKETMQ_HOME}/bin/runserver.sh \
  && chmod +x ${ROCKETMQ_HOME}/bin/runserver.sh \
- && chmod +x ${ROCKETMQ_HOME}/bin/mqnamesrv
+ && chmod +x ${ROCKETMQ_HOME}/bin/mqnamesrv \
+ && vi +':w ++ff=unix' +':q' ${ROCKETMQ_HOME}/bin/runserver.sh
 
 CMD cd ${ROCKETMQ_HOME}/bin \
  && export JAVA_OPT=" -Duser.home=/opt" \
