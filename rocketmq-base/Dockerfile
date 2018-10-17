@@ -19,7 +19,7 @@
 #FROM java:8
 FROM centos:7
 
-RUN echo "Asia/shanghai" > /etc/timezone;
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" > /etc/timezone
 
 RUN yum install -y java-1.8.0-openjdk-headless unzip gettext nmap-ncat openssl\
  && yum clean all -y
