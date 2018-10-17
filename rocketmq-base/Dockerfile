@@ -40,8 +40,15 @@ RUN mkdir -p \
  /opt/store
 
 # get the version
-RUN curl https://dist.apache.org/repos/dist/release/rocketmq/${ROCKETMQ_VERSION}/rocketmq-all-${ROCKETMQ_VERSION}-bin-release.zip -o rocketmq.zip \
- && unzip rocketmq.zip \
+# RUN curl https://dist.apache.org/repos/dist/release/rocketmq/${ROCKETMQ_VERSION}/rocketmq-all-${ROCKETMQ_VERSION}-bin-release.zip -o rocketmq.zip \
+#  && unzip rocketmq.zip \
+#  && mv rocketmq-all*/* . \
+#  && rmdir rocketmq-all*  \
+#  && rm rocketmq.zip
+
+COPY rocketmq.zip rocketmq.zip
+
+RUN unzip rocketmq.zip \
  && mv rocketmq-all*/* . \
  && rmdir rocketmq-all*  \
  && rm rocketmq.zip
